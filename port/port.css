@@ -1,0 +1,192 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #4b006e; 
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #4b006e, #5c2c90); /* purple gradient */
+  color: white;
+}
+
+/* Position navbar top-right */
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 50px;
+}
+
+/* Style for nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Hover and active underline effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #a18cd1, #fbc2eb); /* soft underline gradient */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.hero h1 span {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb, #4fd1c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ddd;
+  margin: 15px 0;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #bbb;
+  margin: 10px 0 30px;
+  max-width: 600px;
+}
+
+.hero .buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.hero .buttons a {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 2px solid #ccc;
+  color: #ccc;
+}
+
+.btn-outline:hover {
+  background-color: #fff;
+  color: #4b006e;
+  border-color: #fff;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 40px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.education {
+  max-width: 400px;
+}
+
+.education h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.edu-card {
+  display: flex;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.edu-icon {
+  font-size: 30px;
+}
+
+.edu-info h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.edu-info .college {
+  font-weight: 600;
+  color: #b085ff;
+  margin-bottom: 5px;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 13px;
+  border-radius: 20px;
+  margin-top: 8px;
+}
+
+.status.completed {
+  background-color: #2255aa;
+  color: #ffffff;
+}
+
+.status.current {
+  background-color: #117744;
+  color: #ffffff;
+}
