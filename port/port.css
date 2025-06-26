@@ -29,6 +29,8 @@ header {
   gap: 40px;
 }
 
+
+
 .nav-links a {
   position: relative;
   text-decoration: none;
@@ -51,7 +53,74 @@ header {
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
+
 }
+
+/* Animation Element */
+.animation {
+    position: absolute;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(90deg, #6e45e2, #88d3ce);
+    border-radius: 8px;
+    bottom: 0;
+    z-index: 0;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Animation Positioning */
+.nav-item:nth-child(1):hover ~ .animation {
+    left: 0;
+    width: 90px;
+}
+
+.nav-item:nth-child(2):hover ~ .animation {
+    left: 100px;
+    width: 90px;
+}
+
+.nav-item:nth-child(3):hover ~ .animation {
+    left: 200px;
+    width: 90px;
+}
+
+.nav-item:nth-child(4):hover ~ .animation {
+    left: 300px;
+    width: 100px;
+}
+
+.nav-item:nth-child(5):hover ~ .animation {
+    left: 410px;
+    width: 90px;
+}
+
+/* Active State Animation */
+.nav-item:nth-child(1).active ~ .animation {
+    left: 0;
+    width: 90px;
+}
+
+.nav-item:nth-child(2).active ~ .animation {
+    left: 100px;
+    width: 90px;
+}
+
+.nav-item:nth-child(3).active ~ .animation {
+    left: 200px;
+    width: 90px;
+}
+
+.nav-item:nth-child(4).active ~ .animation {
+    left: 300px;
+    width: 100px;
+}
+
+.nav-item:nth-child(5).active ~ .animation {
+    left: 410px;
+    width: 90px;
+}
+
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
@@ -137,56 +206,215 @@ header {
   flex-wrap: wrap;
 }
 
-.education {
-  max-width: 400px;
+/* Education Section Styling */
+.education-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.education h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #ffffff;
+.education-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #03070b;
+    position: relative;
 }
 
-.edu-card {
-  display: flex;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+.education-section h2::after {
+    content: none;
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #251f44;;
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
-.edu-icon {
-  font-size: 30px;
+.education-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.edu-info h3 {
-  font-size: 20px;
-  margin-bottom: 5px;
-  color: #ffffff;
+.education-card {
+    flex: 1;
+    min-width: 250px;
+    background:  rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(123, 97, 255, 0.5);
+    padding: 30px;
+    transition: all 0.3s ease;
+    border-top: 4px solid #3498db;
 }
 
-.edu-info .college {
-  font-weight: 600;
-  color: #b085ff;
-  margin-bottom: 5px;
+.education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.education-card h3 {
+    font-size: 1.5rem;
+    color: #508ac5;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.education-card h4 {
+    font-size: 1.2rem;
+    color: #3498db;
+    margin: 10px 0 5px;
+}
+
+.education-card p {
+    color: #099ea8;
+    margin: 5px 0;
+    line-height: 1.6;
 }
 
 .status {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 13px;
-  border-radius: 20px;
-  margin-top: 8px;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.9rem;
 }
 
-.status.completed {
-  background-color: #2255aa;
-  color: #ffffff;
+.current {
+    background-color: #e3f2fd;
+    color: #1976d2;
 }
 
-.status.current {
-  background-color: #117744;
-  color: #ffffff;
+.completed {
+    background-color: #e8f5e9;
+    color: #055509;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .education-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .education-card {
+        min-width: 100%;
+    }
+    
+    .education-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Base styles */
+body {
+    background: linear-gradient(to right, #4b006e, #5c2c90);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Journey section container */
+.journey-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative elements */
+.journey-section::before {
+    content: none;
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(123, 97, 255, 0.2) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.journey-section::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.15) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Typography */
+.journey-title {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+.journey-title::after {
+    content: none;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #7b61ff, #88d3ce);
+    border-radius: 3px;
+}
+
+.journey-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+/* Skills bubbles */
+.skills-bubbles {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.skill-bubble {
+    background: rgba(123, 97, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(123, 97, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .journey-section {
+        padding: 30px 20px;
+    }
+    
+    .journey-title {
+        font-size: 2rem;
+    }
+    
+    .journey-text {
+        font-size: 1rem;
+    }
 }
