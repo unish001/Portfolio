@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #4b006e; 
+  background-color: rgb(22,30,46); 
 }
 
 
@@ -20,6 +20,7 @@ header {
   display: flex;
   justify-content: flex-end;
   padding: 20px 50px;
+    background-color: rgb(22,30,46);
 }
 
 /* Style for nav links */
@@ -135,6 +136,8 @@ header {
   justify-content: center;
   text-align: center;
   padding: 80px 20px;
+  background-color: rgb(22,30,46);
+
 }
 
 .hero h1 {
@@ -218,7 +221,7 @@ header {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #03070b;
+    color: #ffffff;
     position: relative;
 }
 
@@ -242,7 +245,7 @@ header {
 .education-card {
     flex: 1;
     min-width: 250px;
-    background:  rgba(0, 0, 0, 0.2);
+    background:     rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(123, 97, 255, 0.5);
     padding: 30px;
